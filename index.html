@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p10_Transition Animation</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        a{
+            animation-name: mou;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 4em;
+            font-weight: 900;
+            text-decoration: none;
+            border-bottom: .1em solid blue;
+            color: blue;
+            transition: font-weight 10s, color 5s, border 2s;
+        }
+        @keyframes mou{
+            0%{
+                top: 0;
+                left: 0;
+            }
+            20%{
+                top: 0;
+                left: 80%;
+            }
+            50%{
+                top: 80%;
+                left: 80%;
+            }
+            75%{
+                top: 80%;
+                left: 0%;
+            }
+            100%{
+                top: 0%;
+                left: 0%;
+            }
+        }
+        a:hover{
+            transition-delay: 5s;
+            transition-timing-function: ease;
+            border-bottom: .1em solid greenyellow;
+            color: greenyellow;
+            font-weight: 100;
+        }
+        #trans_scale{
+            transform: rotate(45deg);
+        }
+        a:hover #trans_scale{
+            transform: rotate(270deg);
+            transition: transform 20s;
+        }
+        span:first-child{
+            transition-timing-function: ease;
+            padding: 0;
+            transition: padding 10s;
+        }
+        a:hover span:first-child{
+            padding-right: 10em;
+        }
+    </style>
+</head>
+<body>
+    <a id="trans_scale" href="#"><span>click</span> <span>here</span></a>
+    <a href="#"><span>click</span> <span>here</span></a>
+</body>
+</html>
